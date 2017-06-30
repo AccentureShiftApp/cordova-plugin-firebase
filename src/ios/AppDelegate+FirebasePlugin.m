@@ -29,6 +29,17 @@
     objc_setAssociatedObject(self, kApplicationInBackgroundKey, applicationInBackground, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
+//@start
+// Used entirely to enable blur
+- (void)applicationWillResignActive:(UIApplication *)application {
+    NSLog(@"Application will resign active");
+    UIViewController *blankViewController = [UIViewController new];
+    blankViewController.view.backgroundColor = [UIColor blackColor];
+    [self.window.rootViewController presentViewController:blankViewController animated:NO completion:NULL];
+}
+//@end
+
+
 - (NSNumber *)applicationInBackground {
     return objc_getAssociatedObject(self, kApplicationInBackgroundKey);
 }
@@ -49,6 +60,10 @@
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
+//    @start
+//    Used to disable blur
+    [self.window.rootViewController dismissViewControllerAnimated:NO completion:NO];
+//    @end
     [self connectToFcm];
     self.applicationInBackground = @(NO);
 }
