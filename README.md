@@ -7,6 +7,10 @@ See npm package for versions - https://www.npmjs.com/package/cordova-plugin-fire
 
 Install the plugin by adding it your project's config.xml:
 ```
+<plugin name="cordova-plugin-firebase" spec="https://github.com/AccentureShiftApp/cordova-plugin-firebase" />
+```
+or from original repo
+```
 <plugin name="cordova-plugin-firebase" spec="0.1.21" />
 ```
 or by running:
