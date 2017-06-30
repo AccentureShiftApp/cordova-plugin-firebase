@@ -9,14 +9,13 @@ Install the plugin by adding it your project's config.xml:
 ```
 <plugin name="cordova-plugin-firebase" spec="https://github.com/AccentureShiftApp/cordova-plugin-firebase" />
 ```
-or from original repo
+
+
+Original repo
 ```
 <plugin name="cordova-plugin-firebase" spec="0.1.21" />
 ```
-or by running:
-```
-cordova plugin add cordova-plugin-firebase@0.1.21 --save
-```
+
 Download your Firebase configuration files, GoogleService-Info.plist for ios and google-services.json for android, and place them in the root folder of your cordova project:
 
 ```
